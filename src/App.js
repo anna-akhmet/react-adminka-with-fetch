@@ -1,4 +1,7 @@
-import './App.css';
+import Shop from "./Shop";
+import React, {useState, useEffect} from 'react';
+import "./index.css";
+
 
 function App() {
   const [login, setLogin] = useState(false);
