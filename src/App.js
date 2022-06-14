@@ -1,25 +1,27 @@
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const [login, setLogin] = useState(false);
+
+  if (login) {
+    return (
+      <>
+        <Shop />
+        <button className="btn" onClick={() => setLogin(false)}>
+          Выйти
+        </button>
+      </>
+    );
+  } else {
+    return (
+      <>
+        <h2>Нужно залогиниться!</h2>
+        <button className="btn" onClick={() => setLogin(true)}>
+          Войти
+        </button>
+      </>
+    );
+  }
 }
 
 export default App;
