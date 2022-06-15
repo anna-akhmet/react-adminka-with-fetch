@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
+import Item from "./Item.js";
 
 export default function Shop() {
 
     const [items, setItems] = useState([]);
     const [loader, setLoader] = useState(true);
-
-    
 
     useEffect(() => {
         (async() => {
@@ -23,5 +22,20 @@ export default function Shop() {
         })()
     }, [])
 
-  return <div className="shop"></div>;
+    const itemsToRender = items.map((item, index) => {
+        return (
+            <li className="ui-list-item" key={items[index].id}>
+                <Item info={items[index]}/>
+            </li>
+        )
+    });
+
+    return (
+    <div className="shop">
+        {loader && <p className="loader">Идет загрузка...</p>}
+        <ul className="ui-list">
+            {itemsToRender}
+        </ul>
+    </div>
+    )
 }
