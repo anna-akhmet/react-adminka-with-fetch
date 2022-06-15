@@ -17,10 +17,10 @@ export default function Item(props) {
 
   return (
     <div className="item">
-      <img src="Сюда идет картинка" alt="" />
+      <img src={info.image} alt="" />
       <div className="item-info">
-        <h2>Сюда идет название</h2>
-        <p>Сюда идет описание</p>
+        <h2>{info.name}</h2>
+        <p>{info.desc}</p>
       </div>
       <div className="item-quantity">
         <button
