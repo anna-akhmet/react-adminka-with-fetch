@@ -1,5 +1,16 @@
 import React, { useState, useEffect } from "react";
 import Item from "./Item.js";
+import styled from "styled-components";
+
+const UIListItem = styled.li`
+    margin-bottom: 80px;
+`;
+
+const UIList = styled.ul`
+    list-style: none;
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+`;
 
 export default function Shop() {
 
@@ -24,18 +35,18 @@ export default function Shop() {
 
     const itemsToRender = items.map((item, index) => {
         return (
-            <li className="ui-list-item" key={items[index].id}>
+            <UIListItem key={items[index].id}>
                 <Item info={items[index]}/>
-            </li>
+            </UIListItem>
         )
     });
 
     return (
     <div className="shop">
         {loader && <p className="loader">Идет загрузка...</p>}
-        <ul className="ui-list">
+        <UIList>
             {itemsToRender}
-        </ul>
+        </UIList>
     </div>
     )
 }
