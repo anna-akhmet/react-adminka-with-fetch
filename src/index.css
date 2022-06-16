@@ -35,59 +35,8 @@ h3 {
   font-size: 16px;
 }
 
-.ui-button {
-  background-color: var(--primary);
-  color: white;
-  border: 0;
-  padding: 15px 20px;
-  min-width: 150px;
-  font-size: 16px;
-  border-radius: 3px;
-  cursor: pointer;
-  transition: opacity 200ms ease-out;
-  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
-}
-
-.ui-button:hover {
-  opacity: 0.8;
-}
-
-.ui-button:disabled {
-  opacity: 0.4;
-  cursor: disabled;
-}
-
-.ui-button:active {
-  box-shadow: 0 0px rgba(0, 0, 0, 0.2);
-  transform: translateY(1px);
-}
-
 [class^="ui-"] {
   margin: 10px;
-}
-
-.ui-list {
-  list-style: none;
-  margin: 0 0 0 0;
-  padding: 0 0 0 0;
-}
-
-.ui-list-item {
-  margin-bottom: 80px;
-}
-
-.item-info {
-  margin-left: 10px;
-}
-
-.item-title {
-  font-size: 30px;
-}
-
-.item-quantity {
-  display: flex;
-  align-items: center;
-  margin-bottom: 50px;
 }
 
 .item-button {
@@ -117,8 +66,4 @@ h3 {
 .item-button:disabled {
   opacity: 0.4;
   cursor: disabled;
-}
-
-.item-total {
-  font-size: 16px;
 }
