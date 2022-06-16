@@ -1,4 +1,29 @@
 import React, { useState } from "react";
+import styled from "styled-components";
+
+const ItemInfo = styled.div`
+  margin-left: 10px;
+`;
+
+const ItemTitle = styled.h2`
+  font-size: 30px;
+`;
+
+const ItemQuantity = styled.div`
+  display: flex;
+  align-items: center;
+  margin-bottom: 50px;
+  margin-left: 10px;
+`;
+
+const ItemTotal = styled.h3`
+  font-size: 16px;
+  margin: 0 5px;
+`;
+
+
+
+
 
 export default function Item(props) {
   const [total, setTotal] = useState(0);
@@ -18,11 +43,11 @@ export default function Item(props) {
   return (
     <div className="item">
       <img src={info.image} alt="" />
-      <div className="item-info">
-        <h2>{info.name}</h2>
+      <ItemInfo>
+        <ItemTitle>{info.name}</ItemTitle>
         <p>{info.desc}</p>
-      </div>
-      <div className="item-quantity">
+      </ItemInfo>
+      <ItemQuantity className="item-quantity">
         <button
           className="item-less"
           disabled={total === 0}
@@ -30,11 +55,11 @@ export default function Item(props) {
         >
           -
         </button>
-        <h3 className="item-total">{total ? total : ""}</h3>
+        <ItemTotal>{total ? total : ""}</ItemTotal>
         <button className="item-more" onClick={handleAddClick}>
           +
         </button>
-      </div>
+      </ItemQuantity>
     </div>
   );
 }
