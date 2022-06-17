@@ -13,17 +13,40 @@ const ItemQuantity = styled.div`
   display: flex;
   align-items: center;
   margin-bottom: 50px;
-  margin-left: 10px;
 `;
 
 const ItemTotal = styled.h3`
   font-size: 16px;
-  margin: 0 5px;
 `;
 
+const ItemButton = styled.button`
+  background-color: white;
+  color: black;
+  border: 1px solid var(--light-gray);
+  padding: 5px 20px;
+  min-width: 50px;
+  font-size: 16px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: opacity 200ms ease-out;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+  margin-right: 10px;
+  margin-left: 10px;
 
+  &:active {
+    box-shadow: 0 0px rgba(0, 0, 0, 0.2);
+    transform: translateY(1px);
+  }
 
+  &:hover {
+    opacity: 0.8;
+  }
 
+  &:disabled {
+    opacity: 0.4;
+    cursor: disabled;
+  }
+`;
 
 export default function Item(props) {
   const [total, setTotal] = useState(0);
@@ -48,17 +71,17 @@ export default function Item(props) {
         <p>{info.desc}</p>
       </ItemInfo>
       <ItemQuantity className="item-quantity">
-        <button
+        <ItemButton
           className="item-less"
           disabled={total === 0}
           onClick={handleRemoveClick}
         >
           -
-        </button>
+        </ItemButton>
         <ItemTotal>{total ? total : ""}</ItemTotal>
-        <button className="item-more" onClick={handleAddClick}>
+        <ItemButton className="item-more" onClick={handleAddClick}>
           +
-        </button>
+        </ItemButton>
       </ItemQuantity>
     </div>
   );

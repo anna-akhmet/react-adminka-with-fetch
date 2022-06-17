@@ -29,6 +29,10 @@ const UIButton = styled.button`
   }
 `;
 
+const UITitle = styled.h2`
+  font-family: Helvetica;
+`;
+
 
 function App() {
   const [login, setLogin] = useState(false);
@@ -45,7 +49,7 @@ function App() {
   } else {
     return (
       <>
-        <h2>Нужно залогиниться!</h2>
+        <UITitle>Нужно залогиниться!</UITitle>
         <UIButton onClick={() => setLogin(true)}>
           Войти
         </UIButton>

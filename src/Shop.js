@@ -12,6 +12,12 @@ const UIList = styled.ul`
     padding: 0 0 0 0;
 `;
 
+const UIContainer = styled.div`
+  padding-top: 5px;
+  width: 100vw;
+  margin: 0 auto;
+`;
+
 export default function Shop() {
 
     const [items, setItems] = useState([]);
@@ -42,11 +48,11 @@ export default function Shop() {
     });
 
     return (
-    <div className="shop">
+    <UIContainer>
         {loader && <p className="loader">Идет загрузка...</p>}
         <UIList>
             {itemsToRender}
         </UIList>
-    </div>
+    </UIContainer>
     )
 }
